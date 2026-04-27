@@ -1,0 +1,45 @@
+2026-04-26 23:30:48,087 | INFO | New game started | difficulty=Normal | secret=90
+2026-04-26 23:31:09,834 | INFO | Guess submitted | guess=15 | secret=90 | outcome=Too Low | attempt=2
+2026-04-26 23:31:16,769 | INFO | Guess submitted | guess=15 | secret=90 | outcome=Too Low | attempt=3
+2026-04-26 23:31:32,200 | INFO | Guess submitted | guess=15 | secret=90 | outcome=Too Low | attempt=4
+2026-04-26 23:31:50,266 | INFO | Guess submitted | guess=12 | secret=90 | outcome=Too Low | attempt=5
+2026-04-26 23:31:52,503 | INFO | Game reset | difficulty=Easy | new secret=3
+2026-04-26 23:31:57,137 | INFO | New game started | difficulty=Normal | secret=89
+2026-04-26 23:31:59,229 | INFO | AI tip requested | history=[] | confidence=0.5
+2026-04-26 23:32:09,819 | INFO | Guess submitted | guess=8 | secret=89 | outcome=Too Low | attempt=2
+2026-04-26 23:32:14,609 | INFO | Guess submitted | guess=12 | secret=89 | outcome=Too Low | attempt=3
+2026-04-26 23:32:19,029 | INFO | AI tip requested | history=[8, 12] | confidence=0.11
+2026-04-26 23:32:23,161 | INFO | Guess submitted | guess=18 | secret=89 | outcome=Too Low | attempt=4
+2026-04-26 23:32:24,629 | INFO | AI tip requested | history=[8, 12, 18] | confidence=0.12
+2026-04-26 23:32:39,284 | INFO | New game started | difficulty=Normal | secret=84
+2026-04-26 23:33:40,080 | INFO | New game started | difficulty=Normal | secret=78
+2026-04-26 23:33:51,949 | INFO | Guess submitted | guess=16 | secret=78 | outcome=Too Low | attempt=2
+2026-04-26 23:33:57,784 | INFO | Guess submitted | guess=19 | secret=78 | outcome=Too Low | attempt=3
+2026-04-26 23:34:01,991 | INFO | Guess submitted | guess=20 | secret=78 | outcome=Too Low | attempt=4
+2026-04-26 23:36:13,241 | INFO | New game started | difficulty=Normal | secret=10
+2026-04-26 23:36:27,981 | INFO | Guess submitted | guess=12 | secret=10 | outcome=Too High | attempt=2
+2026-04-26 23:36:34,971 | INFO | Guess submitted | guess=10 | secret=10 | outcome=Win | attempt=3
+2026-04-26 23:36:34,972 | INFO | Game WON | attempts=3 | score=65
+2026-04-26 23:36:37,318 | INFO | New game started | difficulty=Normal | secret=42
+2026-04-26 23:36:40,861 | INFO | Guess submitted | guess=15 | secret=42 | outcome=Too Low | attempt=2
+2026-04-26 23:36:44,761 | INFO | Guess submitted | guess=18 | secret=42 | outcome=Too Low | attempt=3
+2026-04-26 23:36:54,770 | INFO | Guess submitted | guess=50 | secret=42 | outcome=Too High | attempt=4
+2026-04-26 23:37:03,252 | INFO | Guess submitted | guess=42 | secret=42 | outcome=Win | attempt=5
+2026-04-26 23:37:03,253 | INFO | Game WON | attempts=5 | score=35
+2026-04-26 23:37:10,057 | INFO | Game reset | difficulty=Normal | new secret=18
+2026-04-26 23:37:14,070 | INFO | AI tip requested | history=[] | confidence=0.5
+2026-04-26 23:37:18,924 | INFO | Guess submitted | guess=42 | secret=18 | outcome=Too High | attempt=1
+2026-04-26 23:37:20,859 | INFO | AI tip requested | history=[42] | confidence=0.5
+2026-04-26 23:50:03,536 | INFO | New game started | difficulty=Normal | secret=48
+2026-04-26 23:50:06,133 | INFO | AI tip requested | history=[] | confidence=0.5
+2026-04-26 23:50:13,094 | INFO | New game started | difficulty=Normal | secret=70
+2026-04-26 23:50:20,895 | INFO | Guess submitted | guess=15 | secret=70 | outcome=Too Low | attempt=2
+2026-04-26 23:50:39,751 | INFO | New game started | difficulty=Normal | secret=41
+2026-04-26 23:50:42,602 | INFO | AI tip requested | history=[] | confidence=0.5
+2026-04-26 23:50:48,011 | INFO | Guess submitted | guess=15 | secret=41 | outcome=Too Low | attempt=2
+2026-04-26 23:57:58,760 | INFO | New game started | difficulty=Normal | secret=16
+2026-04-26 23:58:06,477 | INFO | Guess submitted | guess=12 | secret=16 | outcome=Too Low | attempt=2
+2026-04-26 23:58:07,884 | INFO | AI tip requested | history=[12] | confidence=0.5
+2026-04-26 23:59:23,381 | INFO | New game started | difficulty=Normal | secret=70
+2026-04-26 23:59:27,508 | INFO | Guess submitted | guess=23 | secret=70 | outcome=Too Low | attempt=2
+2026-04-26 23:59:29,837 | INFO | AI tip requested | history=[23] | confidence=0.5

@@ -51,8 +51,15 @@ st.sidebar.caption(f"Range: {low} to {high}")
 st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 
 # ── Session state init ─────────────────────────────────────────────────────────
-if "secret" not in st.session_state:
+if "secret" not in st.session_state or st.session_state.get("difficulty") != difficulty:
     st.session_state.secret = random.randint(low, high)
+    st.session_state.attempts = 1
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
+    st.session_state.ai_tip = None
+    st.session_state.confidence = None
+    st.session_state.difficulty = difficulty
     log_event(f"New game started | difficulty={difficulty} | secret={st.session_state.secret}")
 
 if "attempts" not in st.session_state:

@@ -1,102 +1,128 @@
-import json
-import requests
-import os
-
 """
 evaluator.py
 ------------
-AI-powered hint evaluator. Uses the Claude API to analyze a player's
-guess history and return a strategic suggestion.
+AI-powered hint evaluator. Analyzes a player's guess history and returns
+a strategic suggestion using a rule-based reasoning system.
 """
-
-
-
-CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = "claude-sonnet-4-20250514"
-
-
+ 
+ 
 def evaluate_guess_history(history: list, secret_range: tuple, attempt_limit: int) -> str:
     """
-    Send the player's guess history to Claude and get a strategic tip back.
-
+    Analyze the player's guess history and return a strategic coaching tip.
+ 
     Args:
         history: list of integer guesses made so far
         secret_range: (low, high) tuple of the game range
         attempt_limit: max attempts allowed in this game
-
+ 
     Returns:
-        A short strategic tip string from Claude, or a fallback message on error.
+        A short strategic tip string based on the player's pattern.
     """
     if not history:
         return "No guesses yet — try starting with the middle of the range!"
-
+ 
+    int_history = [g for g in history if isinstance(g, int)]
+ 
+    if not int_history:
+        return "No valid guesses yet — make sure to enter a number!"
+ 
     low, high = secret_range
-    attempts_used = len(history)
-    attempts_remaining = attempt_limit - attempts_used
-
-    prompt = f"""You are a coach for a number guessing game. The player is guessing a secret number between {low} and {high}.
-They have {attempts_remaining} attempts remaining out of {attempt_limit} total.
-Their guesses so far (in order) were: {history}.
-
-Analyze their guessing pattern in 1-2 short sentences. 
-Tell them if they are being strategic (e.g. using binary search) or random. 
-Give one concrete tip for their next guess. Be encouraging but direct.
-Do NOT reveal the secret number. Keep your response under 40 words."""
-
-    try:
-        response = requests.post(
-        CLAUDE_API_URL,
-        headers={
-            "Content-Type": "application/json",
-            "x-api-key": os.environ.get("ANTHROPIC_API_KEY", ""),
-            "anthropic-version": "2023-06-01",
-        },
-        json={
-            "model": MODEL,
-            "max_tokens": 100,
-            "messages": [{"role": "user", "content": prompt}],
-            },
-            timeout=10,
+    attempts_remaining = attempt_limit - len(history)
+    last_guess = int_history[-1]
+    ideal_start = (low + high) // 2
+ 
+    # Pattern: only one guess so far
+    if len(int_history) == 1:
+        distance_from_mid = abs(last_guess - ideal_start)
+        range_size = high - low
+        if distance_from_mid <= range_size * 0.1:
+            return (
+                f"Great start! Guessing near the middle ({ideal_start}) is the optimal "
+                f"opening move. Keep splitting the remaining range in half."
+            )
+        else:
+            return (
+                f"Consider starting near {ideal_start} — the midpoint of {low}-{high}. "
+                f"It cuts the range in half with every guess."
+            )
+ 
+    # Pattern: detect binary search behavior
+    binary_search_count = 0
+    current_low, current_high = low, high
+    for guess in int_history:
+        mid = (current_low + current_high) // 2
+        if abs(guess - mid) <= (current_high - current_low) * 0.15:
+            binary_search_count += 1
+        if guess < mid:
+            current_high = mid
+        else:
+            current_low = mid
+ 
+    is_binary = binary_search_count >= len(int_history) * 0.6
+ 
+    # Pattern: detect repeated guesses
+    unique_guesses = len(set(int_history))
+    if unique_guesses < len(int_history):
+        return "You guessed the same number twice! Each guess should be different to eliminate possibilities."
+ 
+    # Pattern: detect very small steps
+    diffs = [abs(int_history[i] - int_history[i-1]) for i in range(1, len(int_history))]
+    avg_step = sum(diffs) / len(diffs)
+    range_size = high - low
+    if avg_step < range_size * 0.05:
+        next_mid = (current_low + current_high) // 2
+        return (
+            f"You're moving in very small steps — that could use up all your attempts. "
+            f"Try jumping to {next_mid} to eliminate half the remaining range at once."
         )
-        response.raise_for_status()
-        data = response.json()
-        return data["content"][0]["text"].strip()
-
-    except requests.exceptions.Timeout:
-        return "⚠️ AI coach timed out. Try guessing the midpoint of your remaining range!"
-    except requests.exceptions.RequestException as e:
-        return f"⚠️ AI coach unavailable: {str(e)}"
-    except (KeyError, IndexError):
-        return "⚠️ Unexpected response from AI coach. Keep going — you've got this!"
-
-
+ 
+    # Pattern: urgent warning if attempts running low
+    if attempts_remaining <= 2:
+        next_mid = (current_low + current_high) // 2
+        return (
+            f"Only {attempts_remaining} attempt(s) left — guess {next_mid} now. "
+            f"It's the best chance to hit the target."
+        )
+ 
+    # Pattern: good binary search
+    if is_binary:
+        next_mid = (current_low + current_high) // 2
+        return (
+            f"Solid binary search strategy! You're narrowing it down efficiently. "
+            f"Your next best guess is around {next_mid}."
+        )
+ 
+    # Pattern: random-looking guesses
+    next_mid = (current_low + current_high) // 2
+    return (
+        f"Your guesses look a bit random. Try a more systematic approach — "
+        f"guess {next_mid} to cut the remaining range in half."
+    )
+ 
+ 
 def evaluate_confidence(history: list, secret_range: tuple) -> float:
     """
-    Calculate a simple confidence score (0.0 - 1.0) based on how
-    strategically the player is narrowing the range.
-
-    A player doing perfect binary search scores ~1.0.
-    A player guessing randomly scores closer to 0.0.
-
+    Calculate a confidence score (0.0 - 1.0) based on how strategically
+    the player is narrowing the range using binary search.
+ 
     Args:
         history: list of integer guesses
         secret_range: (low, high) tuple
-
+ 
     Returns:
         Float between 0.0 and 1.0
     """
     if len(history) < 2:
-        return 0.5  # Not enough data
-
+        return 0.5
+ 
     low, high = secret_range
     total_range = high - low
     if total_range == 0:
         return 1.0
-
-    # Measure how much range each guess eliminated
+ 
     elimination_scores = []
     current_low, current_high = low, high
-
+ 
     for guess in history:
         if not isinstance(guess, int):
             continue
@@ -106,17 +132,16 @@ def evaluate_confidence(history: list, secret_range: tuple) -> float:
         if max_distance == 0:
             score = 1.0
         else:
-            # Closer to midpoint = better binary search = higher score
             score = 1.0 - (distance_from_mid / max_distance)
         elimination_scores.append(score)
-
-        # Update theoretical range based on guess direction
+ 
         if guess < midpoint:
-            current_low = guess
+            current_high = midpoint
         else:
-            current_high = guess
-
+            current_low = midpoint
+ 
     if not elimination_scores:
         return 0.5
-
+ 
     return round(sum(elimination_scores) / len(elimination_scores), 2)
+ 

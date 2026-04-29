@@ -1,0 +1,7 @@
+2026-04-29 10:52:42,268 | INFO | New game started | difficulty=Normal | secret=39
+2026-04-29 10:52:49,826 | INFO | New game started | difficulty=Easy | secret=12
+2026-04-29 10:52:57,428 | INFO | New game started | difficulty=Normal | secret=11
+2026-04-29 10:53:03,221 | INFO | Guess submitted | guess=25 | secret=11 | outcome=Too High | attempt=2
+2026-04-29 10:53:05,383 | INFO | AI tip requested | history=[25] | confidence=0.5
+2026-04-29 10:53:17,693 | INFO | Guess submitted | guess=50 | secret=11 | outcome=Too High | attempt=3
+2026-04-29 10:53:23,728 | INFO | AI tip requested | history=[25, 50] | confidence=0.25

@@ -37,7 +37,7 @@ def get_range_for_difficulty(difficulty: str):
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 st.title("🎮 Game Glitch Investigator")
-st.caption("An AI-generated guessing game — now with an AI reliability coach.")
+st.caption("An  guessing game — now with an AI strategy tip.")
 
 # ── Sidebar settings ───────────────────────────────────────────────────────────
 st.sidebar.header("Settings")
@@ -194,6 +194,3 @@ if submit:
                     f"The secret was {st.session_state.secret}. "
                     f"Score: {st.session_state.score}"
                 )
-
-st.divider()
-st.caption("Built by an AI that claims this code is production-ready.")

@@ -117,3 +117,55 @@
 2026-04-29 13:28:24,846 | INFO | Invalid guess | raw='-1' | error=Please enter a number between 1 and 100.
 2026-04-29 13:28:28,328 | INFO | Invalid guess | raw='abc4' | error=That is not a number.
 2026-04-29 13:28:38,196 | INFO | AI tip requested | history=[] | confidence=0.5
+2026-04-29 18:25:03,818 | INFO | New game started | difficulty=Normal | secret=32
+2026-04-29 19:05:21,165 | INFO | New game started | difficulty=Normal | secret=79
+2026-04-29 19:14:58,525 | INFO | New game started | difficulty=Normal | secret=15
+2026-04-29 19:36:15,337 | INFO | Guess submitted | guess=25 | secret=15 | outcome=Too High | attempt=2
+2026-04-29 19:36:16,313 | INFO | AI tip requested | history=[25] | confidence=0.5
+2026-04-29 19:36:27,844 | INFO | Guess submitted | guess=90 | secret=15 | outcome=Too High | attempt=3
+2026-04-29 19:36:28,557 | INFO | AI tip requested | history=[25, 90] | confidence=-0.56
+2026-04-29 19:51:21,107 | INFO | New game started | difficulty=Normal | secret=63
+2026-04-29 19:51:29,986 | INFO | Guess submitted | guess=10 | secret=63 | outcome=Too Low | attempt=2
+2026-04-29 19:51:33,285 | INFO | Guess submitted | guess=90 | secret=63 | outcome=Too High | attempt=3
+2026-04-29 19:51:36,924 | INFO | Guess submitted | guess=15 | secret=63 | outcome=Too Low | attempt=4
+2026-04-29 19:51:39,146 | INFO | AI tip requested | history=[10, 90, 15] | confidence=-0.76
+2026-04-29 19:51:50,385 | INFO | New game started | difficulty=Normal | secret=4
+2026-04-29 19:51:55,839 | INFO | Guess submitted | guess=50 | secret=4 | outcome=Too High | attempt=2
+2026-04-29 19:51:58,858 | INFO | Guess submitted | guess=75 | secret=4 | outcome=Too High | attempt=3
+2026-04-29 19:52:10,415 | INFO | Guess submitted | guess=62 | secret=4 | outcome=Too High | attempt=4
+2026-04-29 19:52:11,837 | INFO | AI tip requested | history=[50, 75, 62] | confidence=-0.31
+2026-04-29 19:52:28,536 | INFO | New game started | difficulty=Normal | secret=6
+2026-04-29 19:52:34,363 | INFO | Guess submitted | guess=50 | secret=6 | outcome=Too High | attempt=2
+2026-04-29 19:52:37,357 | INFO | Guess submitted | guess=75 | secret=6 | outcome=Too High | attempt=3
+2026-04-29 19:52:38,625 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-04-29 19:52:43,135 | INFO | New game started | difficulty=Normal | secret=1
+2026-04-29 19:52:48,910 | INFO | Guess submitted | guess=50 | secret=1 | outcome=Too High | attempt=2
+2026-04-29 19:52:59,536 | INFO | Guess submitted | guess=25 | secret=1 | outcome=Too High | attempt=3
+2026-04-29 19:53:00,781 | INFO | AI tip requested | history=[50, 25] | confidence=0.98
+2026-04-29 19:53:06,080 | INFO | New game started | difficulty=Normal | secret=35
+2026-04-29 19:53:11,242 | INFO | Guess submitted | guess=50 | secret=35 | outcome=Too High | attempt=2
+2026-04-29 19:53:18,130 | INFO | Guess submitted | guess=75 | secret=35 | outcome=Too High | attempt=3
+2026-04-29 19:53:20,479 | INFO | New game started | difficulty=Normal | secret=93
+2026-04-29 19:53:25,949 | INFO | Guess submitted | guess=50 | secret=93 | outcome=Too Low | attempt=2
+2026-04-29 19:53:29,484 | INFO | Guess submitted | guess=75 | secret=93 | outcome=Too Low | attempt=3
+2026-04-29 19:53:31,054 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-04-29 19:53:35,731 | INFO | New game started | difficulty=Normal | secret=34
+2026-04-29 19:57:23,406 | INFO | New game started | difficulty=Normal | secret=16
+2026-04-29 19:58:52,516 | INFO | Guess submitted | guess=25 | secret=16 | outcome=Too High | attempt=2
+2026-04-29 19:58:56,563 | INFO | Guess submitted | guess=1 | secret=16 | outcome=Too Low | attempt=3
+2026-04-29 19:59:01,062 | INFO | Guess submitted | guess=15 | secret=16 | outcome=Too Low | attempt=4
+2026-04-29 19:59:04,344 | INFO | AI tip requested | history=[25, 1, 15] | confidence=0.45
+2026-04-29 19:59:36,769 | INFO | Guess submitted | guess=19 | secret=16 | outcome=Too High | attempt=5
+2026-04-29 19:59:42,046 | INFO | Guess submitted | guess=16 | secret=16 | outcome=Win | attempt=6
+2026-04-29 19:59:42,047 | INFO | Game WON | attempts=6 | score=20
+2026-04-29 19:59:45,422 | INFO | New game started | difficulty=Normal | secret=25
+2026-04-29 19:59:50,199 | INFO | Guess submitted | guess=50 | secret=25 | outcome=Too High | attempt=2
+2026-04-29 19:59:54,546 | INFO | Guess submitted | guess=25 | secret=25 | outcome=Win | attempt=3
+2026-04-29 19:59:54,547 | INFO | Game WON | attempts=3 | score=65
+2026-04-29 19:59:56,844 | INFO | AI tip requested | history=[50, 25] | confidence=0.98
+2026-04-29 20:01:45,234 | INFO | New game started | difficulty=Easy | secret=10
+2026-04-29 20:01:49,591 | INFO | New game started | difficulty=Hard | secret=18
+2026-04-29 20:01:51,970 | INFO | New game started | difficulty=Easy | secret=12
+2026-04-29 20:02:11,642 | INFO | Guess submitted | guess=10 | secret=12 | outcome=Too Low | attempt=2
+2026-04-29 20:02:15,695 | INFO | Guess submitted | guess=20 | secret=12 | outcome=Too High | attempt=3
+2026-04-29 20:02:17,386 | INFO | AI tip requested | history=[10, 20] | confidence=-0.53

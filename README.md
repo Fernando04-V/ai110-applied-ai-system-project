@@ -73,48 +73,47 @@ I made this extension because in these sorts of games, players often just guess 
 
 ---
  
-## Design Decisions
+# Design Decisions
  
-# Why a rule-based AI coach instead of a language model?**
+## Why a rule-based AI coach instead of a language model?**
 - 
 
-# Why a Reliability/Testing System as the AI feature?**
+## Why a Reliability/Testing System as the AI feature?**
 - 
  
 
 ---
  
-## Testing Summary
+# Testing Summary
  
 Run with: `pytest -v`
  
 
 ---
  
-## Reflection and Ethics
+# Reflection and Ethics
  
-# What are the limitation or biases in your system?
+## What are the limitation or biases in your system?
 - 
  
-# Could your AI be misued, and how woud you prevent that?
+## Could your AI be misued, and how woud you prevent that?
 - 
  
-# What suprised you while testing your AI's reliability?
+## What suprised you while testing your AI's reliability?
 - 
 
-# Describe your collaboration with AI during this project. Identify one instance when the AI gave a helpful suggestion and one instance where its suggestion was flawed or incorrect.
+## Describe your collaboration with AI during this project. Identify one instance when the AI gave a helpful suggestion and one instance where its suggestion was flawed or incorrect.
 - 
 
 ---
  
-## [ Video Walkthrough ](assets/ai110_demo.mp4)
+# [ Video Walkthrough ](assets/ai110_demo.mp4)
  
 ---
  
-## Porfolio Artifact
+# Porfolio Artifact
 
-### Github Link: https://github.com/Fernando04-V/ai110-applied-ai-system-project.git
-- 
+## Github Link: https://github.com/Fernando04-V/ai110-applied-ai-system-project.git
 
-### What this project says about me as an AI engineer?
+## What this project says about me as an AI engineer?
 - 

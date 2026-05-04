@@ -18,37 +18,7 @@ The goal is to demonstrate a complete applied AI system: a working application, 
  
 ---
  
-## Architecture Overview
- 
-```
-User (Streamlit UI)
-        │
-        ▼
-   app.py
-   │  - Handles UI, session state, game flow
-   │  - Calls logic_utils for guess checking and scoring
-   │  - Calls evaluator for AI tips and confidence score
-   │  - Writes all events to game_log.txt
-   │
-   ├──► logic_utils.py
-   │    - parse_guess()               ← validates input
-   │    - check_guess()               ← compares guess to secret
-   │    - update_score()              ← calculates score
-   │    - get_range_for_difficulty()  ← sets range per difficulty
-   │
-   └──► evaluator.py (rule-based AI, no API required)
-        - evaluate_guess_history()   ← detects pattern, returns tip
-        - evaluate_confidence()      ← scores strategy 0.0 to 1.0
- 
-   game_log.txt
-   (all guesses, outcomes, and AI tip requests logged here)
- 
-   tests/
-   ├── test_game_logic.py   (25 tests for logic_utils)
-   └── test_evaluator.py    (12 tests for evaluator)
-```
- 
-**Data flow:** The player types a guess → `app.py` validates it via `parse_guess` → compares it via `check_guess` → updates score via `update_score` → logs the result. When the player clicks "Get AI Strategy Tip", `evaluate_guess_history` runs the guess history through a series of pattern detection rules and returns a coaching tip. `evaluate_confidence` computes a local strategy score. Both results display instantly with no network call.
+## [Architecture Overview] (assets/systemDiagram.png)
  
 ---
  

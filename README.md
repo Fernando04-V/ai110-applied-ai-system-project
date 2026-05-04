@@ -2,9 +2,7 @@
  
 ## Original Project
  
-This project extends **Game Glitch Investigator** from Module 1 of AI110.
- 
-The original project was a Streamlit number-guessing game intentionally filled with bugs such as wrong hints, resetting secret numbers, and broken scoring. The goal was to identify, document, and fix those bugs using AI-assisted debugging tools like GitHub Copilot. Core logic was refactored from `app.py` into `logic_utils.py`, and automated tests were added using `pytest`.
+- This project extends **Game Glitch Investigator** from Module 1 of AI110. The original project was a Streamlit number-guessing game intentionally filled with bugs such as wrong hints, resetting secret numbers, and broken scoring. The goal was to identify, document, and fix those bugs using AI-assisted debugging tools like GitHub Copilot. Core logic was refactored from `app.py` into `logic_utils.py`, and automated tests were added using `pytest`.
  
 ---
  
@@ -52,22 +50,27 @@ I made this extension because in these sorts of games, players often just guess 
 - Input: `23` (secret is 48)
 - Output: `📈 Go HIGHER!`
 - Log: `2026-05-03 19:05:18,346 | INFO | Guess submitted | guess=23 | secret=48 | outcome=Too Low | attempt=1`
+
 **Example 2 — Invalid input caught by guardrail:**
 - Input: `111` (out of range)
 - Output: `Please enter a number between 1 and 100.`
 - Log: `2026-05-03 19:06:54,863 | INFO | Invalid guess | raw='1111' | error=Please enter a number between 1 and 100.`
+
 **Example 3 — AI coach detects random guessing:**
 - Guess history: `[15, 90, 22]`
 - Coach output: `💡 Your guesses look a bit random. Try a more systematic approach — guess 50 to cut the remaining range in half.`
 - Strategy Score: `20% 🔴 Random`
+
 **Example 4 — AI coach detects binary search:**
 - Guess history: `[50, 75, 62]`
 - Coach output: `💡 Solid binary search strategy! You're narrowing it down efficiently. Your next best guess is around 68.`
 - Strategy Score: `85% 🟢 Strategic`
+
 **Example 5 — Win:**
 - Input: `72`
 - Output: Balloons 🎈 + `You won! The secret was 72. Final score: 60`
 - Log: `Game WON | attempts=4 | score=60`
+
 ---
  
 ## Design Decisions
@@ -110,8 +113,8 @@ Run with: `pytest -v`
  
 ## Porfolio Artifact
 
-# Github Link: https://github.com/Fernando04-V/ai110-applied-ai-system-project.git
+### Github Link: https://github.com/Fernando04-V/ai110-applied-ai-system-project.git
 - 
 
-# What this project says about me as an AI engineer?
+### What this project says about me as an AI engineer?
 - 

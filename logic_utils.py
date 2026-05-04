@@ -69,16 +69,16 @@ def check_guess(guess, secret):
         return "Win", "Correct!"
     try:
         if guess > secret:
-            return "Too High", "Go LOWER!"
+            return "Too High", "📉 Go LOWER!"
         else:
-            return "Too Low", "Go HIGHER!"
+            return "Too Low", "📈 Go HIGHER!"
     except TypeError:
         g = str(guess)
         if g == str(secret):
             return "Win", "Correct!"
         if g > str(secret):
-            return "Too High", "Go LOWER!"
-        return "Too Low", "Go HIGHER!"
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
 
 
 # FIX: Refactored update_score into logic_utils.py using AI assistance.

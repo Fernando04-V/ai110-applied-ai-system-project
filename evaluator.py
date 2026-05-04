@@ -22,14 +22,14 @@ def evaluate_guess_history(history: list, secret_range: tuple, attempt_limit: in
     if not history:
         return "No guesses yet — try starting with the middle of the range!"
 
-    int_history = [g for g in history if isinstance(g, int)]
+    int_history = [e for e in history if isinstance(e, tuple) and isinstance(e[0], int)]
 
     if not int_history:
         return "No valid guesses yet — make sure to enter a number!"
 
     low, high = secret_range
     attempts_remaining = attempt_limit - len(history)
-    last_guess = int_history[-1]
+    last_guess = int_history[-1][0]
     ideal_start = (low + high) // 2
 
     # Pattern: only one guess so far
@@ -50,24 +50,24 @@ def evaluate_guess_history(history: list, secret_range: tuple, attempt_limit: in
     # Pattern: detect binary search behavior
     binary_search_count = 0
     current_low, current_high = low, high
-    for guess in int_history:
+    for guess, outcome in int_history:
         mid = (current_low + current_high) // 2
         if abs(guess - mid) <= (current_high - current_low) * 0.15:
             binary_search_count += 1
-        if guess < mid:
-            current_high = mid
-        else:
-            current_low = mid
+        if outcome == "Too Low":
+            current_low = guess
+        elif outcome == "Too High":
+            current_high = guess
 
     is_binary = binary_search_count >= len(int_history) * 0.6
 
     # Pattern: detect repeated guesses
-    unique_guesses = len(set(int_history))
+    unique_guesses = len(set(g for g, _ in int_history))
     if unique_guesses < len(int_history):
         return "You guessed the same number twice! Each guess should be different to eliminate possibilities."
 
     # Pattern: detect very small steps
-    diffs = [abs(int_history[i] - int_history[i-1]) for i in range(1, len(int_history))]
+    diffs = [abs(int_history[i][0] - int_history[i-1][0]) for i in range(1, len(int_history))]
     avg_step = sum(diffs) / len(diffs)
     range_size = high - low
     if avg_step < range_size * 0.05:
@@ -113,7 +113,9 @@ def evaluate_confidence(history: list, secret_range: tuple) -> float:
     Returns:
         Float between 0.0 and 1.0
     """
-    if len(history) < 2:
+    int_history = [e for e in history if isinstance(e, tuple) and isinstance(e[0], int)]
+
+    if len(int_history) < 2:
         return 0.5
 
     low, high = secret_range
@@ -124,22 +126,20 @@ def evaluate_confidence(history: list, secret_range: tuple) -> float:
     elimination_scores = []
     current_low, current_high = low, high
 
-    for guess in history:
-        if not isinstance(guess, int):
-            continue
+    for guess, outcome in int_history:
         midpoint = (current_low + current_high) / 2
         distance_from_mid = abs(guess - midpoint)
         max_distance = (current_high - current_low) / 2
         if max_distance == 0:
             score = 1.0
         else:
-            score = 1.0 - (distance_from_mid / max_distance)
+            score = max(0.0, 1.0 - (distance_from_mid / max_distance))
         elimination_scores.append(score)
 
-        if guess < midpoint:
-            current_high = midpoint
-        else:
-            current_low = midpoint
+        if outcome == "Too Low":
+            current_low = guess
+        elif outcome == "Too High":
+            current_high = guess
 
     if not elimination_scores:
         return 0.5

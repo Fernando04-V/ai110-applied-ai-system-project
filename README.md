@@ -75,10 +75,10 @@ I made this extension because in these sorts of games, players often just guess 
  
 # Design Decisions
  
-## Why a rule-based AI coach instead of a language model?**
+## Why a rule-based AI coach instead of a language model?
 - 
 
-## Why a Reliability/Testing System as the AI feature?**
+## Why a Reliability/Testing System as the AI feature?
 - 
  
 

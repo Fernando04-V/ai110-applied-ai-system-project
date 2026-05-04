@@ -196,3 +196,75 @@
 2026-05-03 19:13:00,192 | INFO | Guess submitted | guess=75 | secret=71 | outcome=Too High | attempt=2
 2026-05-03 19:13:03,357 | INFO | Guess submitted | guess=62 | secret=71 | outcome=Too Low | attempt=3
 2026-05-03 19:13:04,403 | INFO | AI tip requested | history=[50, 75, 62] | confidence=-0.31
+2026-05-03 19:31:21,753 | INFO | New game started | difficulty=Normal | secret=17
+2026-05-03 19:31:26,448 | INFO | Guess submitted | guess=50 | secret=17 | outcome=Too High | attempt=1
+2026-05-03 19:31:30,071 | INFO | Guess submitted | guess=25 | secret=17 | outcome=Too High | attempt=2
+2026-05-03 19:31:30,880 | INFO | AI tip requested | history=[50, 25] | confidence=0.98
+2026-05-03 19:32:46,007 | INFO | New game started | difficulty=Normal | secret=66
+2026-05-03 19:32:50,683 | INFO | Guess submitted | guess=50 | secret=66 | outcome=Too Low | attempt=1
+2026-05-03 19:32:54,146 | INFO | Guess submitted | guess=75 | secret=66 | outcome=Too High | attempt=2
+2026-05-03 19:32:56,139 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:33:00,952 | INFO | New game started | difficulty=Normal | secret=56
+2026-05-03 19:33:04,731 | INFO | Guess submitted | guess=50 | secret=56 | outcome=Too Low | attempt=1
+2026-05-03 19:33:10,071 | INFO | Guess submitted | guess=75 | secret=56 | outcome=Too High | attempt=2
+2026-05-03 19:33:13,076 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:33:32,867 | INFO | New game started | difficulty=Normal | secret=23
+2026-05-03 19:33:37,741 | INFO | Guess submitted | guess=50 | secret=23 | outcome=Too High | attempt=1
+2026-05-03 19:33:38,820 | INFO | AI tip requested | history=[50] | confidence=0.5
+2026-05-03 19:33:55,403 | INFO | Guess submitted | guess=75 | secret=23 | outcome=Too High | attempt=2
+2026-05-03 19:33:57,299 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:34:02,640 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:35:20,685 | INFO | New game started | difficulty=Normal | secret=32
+2026-05-03 19:35:30,038 | INFO | Guess submitted | guess=50 | secret=32 | outcome=Too High | attempt=1
+2026-05-03 19:35:33,912 | INFO | Guess submitted | guess=75 | secret=32 | outcome=Too High | attempt=2
+2026-05-03 19:35:36,197 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:35:46,556 | INFO | Guess submitted | guess=62 | secret=32 | outcome=Too High | attempt=3
+2026-05-03 19:35:48,234 | INFO | AI tip requested | history=[50, 75, 62] | confidence=-0.31
+2026-05-03 19:35:59,931 | INFO | New game started | difficulty=Normal | secret=52
+2026-05-03 19:36:03,453 | INFO | Guess submitted | guess=50 | secret=52 | outcome=Too Low | attempt=1
+2026-05-03 19:36:06,886 | INFO | Guess submitted | guess=25 | secret=52 | outcome=Too Low | attempt=2
+2026-05-03 19:36:07,720 | INFO | AI tip requested | history=[50, 25] | confidence=0.98
+2026-05-03 19:36:09,769 | INFO | New game started | difficulty=Normal | secret=81
+2026-05-03 19:36:12,932 | INFO | Guess submitted | guess=50 | secret=81 | outcome=Too Low | attempt=1
+2026-05-03 19:36:15,136 | INFO | Guess submitted | guess=75 | secret=81 | outcome=Too Low | attempt=2
+2026-05-03 19:36:15,840 | INFO | AI tip requested | history=[50, 75] | confidence=0.0
+2026-05-03 19:43:33,147 | INFO | New game started | difficulty=Normal | secret=81
+2026-05-03 19:43:39,535 | INFO | Guess submitted | guess=50 | secret=81 | outcome=Too Low | attempt=1
+2026-05-03 19:43:49,058 | INFO | Guess submitted | guess=75 | secret=81 | outcome=Too Low | attempt=2
+2026-05-03 19:43:54,734 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too Low')] | confidence=0.99
+2026-05-03 19:44:09,567 | INFO | Guess submitted | guess=62 | secret=81 | outcome=Too Low | attempt=3
+2026-05-03 19:44:10,411 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too Low'), (62, 'Too Low')] | confidence=0.66
+2026-05-03 19:46:26,360 | INFO | New game started | difficulty=Normal | secret=63
+2026-05-03 19:46:35,048 | INFO | New game started | difficulty=Easy | secret=18
+2026-05-03 19:46:39,439 | INFO | Guess submitted | guess=10 | secret=18 | outcome=Too Low | attempt=1
+2026-05-03 19:46:43,595 | INFO | Guess submitted | guess=15 | secret=18 | outcome=Too Low | attempt=2
+2026-05-03 19:46:46,112 | INFO | AI tip requested | history=[(10, 'Too Low'), (15, 'Too Low')] | confidence=0.97
+2026-05-03 19:46:50,351 | INFO | Guess submitted | guess=12 | secret=18 | outcome=Too Low | attempt=3
+2026-05-03 19:46:51,767 | INFO | AI tip requested | history=[(10, 'Too Low'), (15, 'Too Low'), (12, 'Too Low')] | confidence=0.65
+2026-05-03 19:47:01,491 | INFO | Game reset | difficulty=Easy | new secret=11
+2026-05-03 19:47:04,816 | INFO | Game reset | difficulty=Easy | new secret=16
+2026-05-03 19:47:09,892 | INFO | Guess submitted | guess=10 | secret=16 | outcome=Too Low | attempt=1
+2026-05-03 19:47:16,250 | INFO | Guess submitted | guess=15 | secret=16 | outcome=Too Low | attempt=2
+2026-05-03 19:47:19,572 | INFO | Guess submitted | guess=12 | secret=16 | outcome=Too Low | attempt=3
+2026-05-03 19:47:20,436 | INFO | AI tip requested | history=[(10, 'Too Low'), (15, 'Too Low'), (12, 'Too Low')] | confidence=0.65
+2026-05-03 19:47:22,787 | INFO | Game reset | difficulty=Easy | new secret=9
+2026-05-03 19:47:31,819 | INFO | Guess submitted | guess=1 | secret=9 | outcome=Too Low | attempt=1
+2026-05-03 19:47:33,263 | INFO | AI tip requested | history=[(1, 'Too Low')] | confidence=0.5
+2026-05-03 19:47:38,627 | INFO | Game reset | difficulty=Easy | new secret=9
+2026-05-03 19:47:42,616 | INFO | Guess submitted | guess=10 | secret=9 | outcome=Too High | attempt=1
+2026-05-03 19:47:47,134 | INFO | Guess submitted | guess=1 | secret=9 | outcome=Too Low | attempt=2
+2026-05-03 19:47:49,604 | INFO | AI tip requested | history=[(10, 'Too High'), (1, 'Too Low')] | confidence=0.47
+2026-05-03 19:49:39,751 | INFO | New game started | difficulty=Normal | secret=29
+2026-05-03 19:49:44,280 | INFO | Guess submitted | guess=50 | secret=29 | outcome=Too High | attempt=1
+2026-05-03 19:49:48,839 | INFO | Guess submitted | guess=25 | secret=29 | outcome=Too Low | attempt=2
+2026-05-03 19:49:50,311 | INFO | AI tip requested | history=[(50, 'Too High'), (25, 'Too Low')] | confidence=0.98
+2026-05-03 19:49:53,850 | INFO | Game reset | difficulty=Normal | new secret=8
+2026-05-03 19:49:57,462 | INFO | Game reset | difficulty=Normal | new secret=73
+2026-05-03 19:50:06,436 | INFO | Guess submitted | guess=50 | secret=73 | outcome=Too Low | attempt=1
+2026-05-03 19:50:10,696 | INFO | Guess submitted | guess=75 | secret=73 | outcome=Too High | attempt=2
+2026-05-03 19:50:11,597 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too High')] | confidence=0.99
+2026-05-03 19:50:17,903 | INFO | Guess submitted | guess=62 | secret=73 | outcome=Too Low | attempt=3
+2026-05-03 19:50:20,414 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too High'), (62, 'Too Low')] | confidence=0.98
+2026-05-03 19:50:21,780 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too High'), (62, 'Too Low')] | confidence=0.98
+2026-05-03 19:50:28,471 | INFO | Guess submitted | guess=68 | secret=73 | outcome=Too Low | attempt=4
+2026-05-03 19:50:38,072 | INFO | Game reset | difficulty=Normal | new secret=7

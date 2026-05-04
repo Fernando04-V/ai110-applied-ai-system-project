@@ -57,36 +57,40 @@ I made this extension because in these sorts of games, players often just guess 
 - Log: `2026-05-03 19:06:54,863 | INFO | Invalid guess | raw='1111' | error=Please enter a number between 1 and 100.`
 
 **Example 3 — AI coach detects random guessing:**
-- Guess history: `[15, 90, 22]`
-- Coach output: `💡 Your guesses look a bit random. Try a more systematic approach — guess 50 to cut the remaining range in half.`
-- Strategy Score: `20% 🔴 Random`
+- Guess history: `[23, 78, 50]`
+- Coach output: `Your guesses look a bit random. Try a more systematic approach — guess 64 to cut the remaining range in half.`
+- Strategy Score: `3.35 pts (Moderate)`
+- log: `2026-05-03 20:49:12,827 | INFO | AI tip requested | history=[(23, 'Too Low'), (78, 'Too High'), (50, 'Too Low')] | confidence=0.67`
 
-**Example 4 — AI coach detects binary search:**
+**Example 4 — AI coach detects binary search with secret number less than 75 :**
 - Guess history: `[50, 75, 62]`
 - Coach output: `💡 Solid binary search strategy! You're narrowing it down efficiently. Your next best guess is around 68.`
-- Strategy Score: `85% 🟢 Strategic`
+- Strategy Score: `3.30 pts (Moderate)`
 
 **Example 5 — Win:**
-- Input: `72`
-- Output: Balloons 🎈 + `You won! The secret was 72. Final score: 60`
-- Log: `Game WON | attempts=4 | score=60`
+- Input: `63`
+- Output: Balloons 🎈 + `You won! The secret was 63. Final score: 80`
+- Log: `2026-05-03 20:48:31,336 | INFO | Game WON | attempts=1 | score=80`
 
 ---
  
 # Design Decisions
  
 ## Why a rule-based AI coach instead of a language model?
-- 
+- I went with a ruled-based reasoning system because of its deterministic nature and because i requires no API Key to work with. 
+After finishing unit 7, i was inspired to continue working with a system that followed a "points system" path.I specially found this fitting to the problem i attempted to address
+which was to analyze a user's inputs and do something productive with it
 
-## Why a Reliability/Testing System as the AI feature?
-- 
+
  
 
 ---
  
-# Testing Summary
+# Testing
  
-Run with: `pytest -v`
+Run from root: 
+- pytest tests/test_game_logic.py -v
+- pytest tests/test_evaluator.py -v
  
 
 ---

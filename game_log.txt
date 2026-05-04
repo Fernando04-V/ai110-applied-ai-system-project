@@ -268,3 +268,25 @@
 2026-05-03 19:50:21,780 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too High'), (62, 'Too Low')] | confidence=0.98
 2026-05-03 19:50:28,471 | INFO | Guess submitted | guess=68 | secret=73 | outcome=Too Low | attempt=4
 2026-05-03 19:50:38,072 | INFO | Game reset | difficulty=Normal | new secret=7
+2026-05-03 20:45:29,233 | INFO | New game started | difficulty=Normal | secret=1
+2026-05-03 20:45:38,165 | INFO | New game started | difficulty=Easy | secret=7
+2026-05-03 20:45:42,851 | INFO | Guess submitted | guess=10 | secret=7 | outcome=Too High | attempt=1
+2026-05-03 20:45:51,804 | INFO | Guess submitted | guess=5 | secret=7 | outcome=Too Low | attempt=2
+2026-05-03 20:45:55,003 | INFO | Guess submitted | guess=7 | secret=7 | outcome=Win | attempt=3
+2026-05-03 20:45:55,004 | INFO | Game WON | attempts=3 | score=50
+2026-05-03 20:46:12,194 | INFO | Game reset | difficulty=Easy | new secret=12
+2026-05-03 20:46:16,549 | INFO | New game started | difficulty=Normal | secret=95
+2026-05-03 20:46:20,270 | INFO | Guess submitted | guess=50 | secret=95 | outcome=Too Low | attempt=1
+2026-05-03 20:46:24,725 | INFO | Guess submitted | guess=75 | secret=95 | outcome=Too Low | attempt=2
+2026-05-03 20:46:32,659 | INFO | Guess submitted | guess=62 | secret=95 | outcome=Too Low | attempt=3
+2026-05-03 20:46:34,352 | INFO | AI tip requested | history=[(50, 'Too Low'), (75, 'Too Low'), (62, 'Too Low')] | confidence=0.66
+2026-05-03 20:48:27,177 | INFO | Game reset | difficulty=Normal | new secret=63
+2026-05-03 20:48:31,336 | INFO | Guess submitted | guess=63 | secret=63 | outcome=Win | attempt=1
+2026-05-03 20:48:31,336 | INFO | Game WON | attempts=1 | score=80
+2026-05-03 20:48:56,952 | INFO | Game reset | difficulty=Normal | new secret=51
+2026-05-03 20:49:02,420 | INFO | Guess submitted | guess=23 | secret=51 | outcome=Too Low | attempt=1
+2026-05-03 20:49:06,949 | INFO | Guess submitted | guess=78 | secret=51 | outcome=Too High | attempt=2
+2026-05-03 20:49:11,489 | INFO | Guess submitted | guess=50 | secret=51 | outcome=Too Low | attempt=3
+2026-05-03 20:49:12,827 | INFO | AI tip requested | history=[(23, 'Too Low'), (78, 'Too High'), (50, 'Too Low')] | confidence=0.67
+2026-05-03 22:25:52,821 | INFO | Guess submitted | guess=51 | secret=51 | outcome=Win | attempt=4
+2026-05-03 22:25:52,821 | INFO | Game WON | attempts=4 | score=45

@@ -127,7 +127,7 @@ Flawed in the sense that in the original evaluate_confidence design returned a s
 
 ---
  
-# [ Video Walkthrough ](assets/ai110_demo.mp4)
+# [ Video Walkthrough ](assets/videoDemo.mp4)
  
 ---
  

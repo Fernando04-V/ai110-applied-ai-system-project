@@ -123,7 +123,7 @@ which was to analyze a user's inputs and do something productive with it
 Flawed in the sense that in the original evaluate_confidence design returned a score between 0.0 to 1.0 but had no clamp which caused scores going negative and yield imsleading results.
 
 ## What this project says about me as an AI engineer?
-- 
+- I think thsi project describes my journey as an AI engineer. Before this course, i had no clue nor idea of how to work with with such AI modules. I cannot say with complete confidence that i am an expert now as there are areas in which i believe i can still grow with such tools. However, I now know what i feels like to get my feet wet with these modules and what is required from me if i desire to keep working with AI. I now also know that being an AI enginner is not easy, it for sure has its demands. However, i do not think the invitation it so not try nor to not take the chance, but rather try it and make the world a better place with the tools of AI
 
 ---
  

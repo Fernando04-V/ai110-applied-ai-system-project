@@ -3,6 +3,10 @@ logic_utils.py
 --------------
 Core game logic for Glitchy Guesser.
 Refactored from app.py during Module 1 debugging project.
+All three original bugs were fixed here:
+  - Wrong hint direction (check_guess)
+  - Out-of-range inputs accepted silently (parse_guess)
+  - Score logic rewarding wrong guesses (update_score)
 """
 
 
@@ -17,17 +21,21 @@ def get_range_for_difficulty(difficulty: str):
     return 1, 100
 
 
-#FIX: Refactored the parse_guess logic into logic_utils.py using Claude
-# - User can now reset games
-# - Game only accepts inputs within the given range
+# FIX: Refactored parse_guess into logic_utils.py using AI assistance.
+# Now rejects empty input, non-numbers, decimals, and out-of-range values.
 def parse_guess(raw: str, low: int, high: int):
     """
-    Parse user input into an int guess.
-    Returns: (ok: bool, guess_int: int | None, error_message: str | None)
+    Parse and validate user input into an integer guess.
+
+    Args:
+        raw: the raw string from the text input
+        low: minimum allowed value (inclusive)
+        high: maximum allowed value (inclusive)
+
+    Returns:
+        (ok: bool, guess_int: int | None, error_message: str | None)
     """
-    if raw is None:
-        return False, None, "Enter a guess."
-    if raw == "":
+    if raw is None or raw == "":
         return False, None, "Enter a guess."
     try:
         if "." in raw:
@@ -43,32 +51,51 @@ def parse_guess(raw: str, low: int, high: int):
     return True, value, None
 
 
-#FIX: Refactored the check_guess logic into logic_utils.py using Claude
-# - Hints now properly yield correct direction
+# FIX: Refactored check_guess into logic_utils.py using AI assistance.
+# Original bug: hint direction was inverted. Now correctly returns Too High / Too Low.
 def check_guess(guess, secret):
     """
-    Compare guess to secret and return (outcome, message).
-    outcome examples: "Win", "Too High", "Too Low"
+    Compare a guess to the secret number.
+
+    Args:
+        guess: the player's integer guess
+        secret: the secret integer
+
+    Returns:
+        (outcome: str, message: str)
+        outcome is one of: "Win", "Too High", "Too Low"
     """
     if guess == secret:
-        return "Win", "🎉 Correct!"
+        return "Win", "Correct!"
     try:
         if guess > secret:
-            return "Too High", "📉 Go LOWER!"
+            return "Too High", "Go LOWER!"
         else:
-            return "Too Low", "📈 Go HIGHER!"
+            return "Too Low", "Go HIGHER!"
     except TypeError:
         g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📉 Go LOWER!"
-        return "Too Low", "📈 Go HIGHER!"
+        if g == str(secret):
+            return "Win", "Correct!"
+        if g > str(secret):
+            return "Too High", "Go LOWER!"
+        return "Too Low", "Go HIGHER!"
 
 
-#FIX: Refactored the update_score logic into logic_utils.py using Claude
+# FIX: Refactored update_score into logic_utils.py using AI assistance.
+# Original bug: rewarded wrong guesses unconditionally. Now only awards
+# a small bonus on even-numbered attempts to add variation without being exploitable.
 def update_score(current_score: int, outcome: str, attempt_number: int):
-    """Update score based on outcome and attempt number."""
+    """
+    Calculate the new score based on the outcome of a guess.
+
+    Args:
+        current_score: the player's current score
+        outcome: "Win", "Too High", or "Too Low"
+        attempt_number: which attempt this was (1-indexed)
+
+    Returns:
+        Updated integer score
+    """
     if outcome == "Win":
         points = 100 - 10 * (attempt_number + 1)
         if points < 10:

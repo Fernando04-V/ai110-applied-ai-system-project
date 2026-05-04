@@ -169,3 +169,30 @@
 2026-04-29 20:02:11,642 | INFO | Guess submitted | guess=10 | secret=12 | outcome=Too Low | attempt=2
 2026-04-29 20:02:15,695 | INFO | Guess submitted | guess=20 | secret=12 | outcome=Too High | attempt=3
 2026-04-29 20:02:17,386 | INFO | AI tip requested | history=[10, 20] | confidence=-0.53
+2026-05-03 19:04:48,299 | INFO | New game started | difficulty=Normal | secret=48
+2026-05-03 19:05:18,346 | INFO | Guess submitted | guess=23 | secret=48 | outcome=Too Low | attempt=1
+2026-05-03 19:06:24,770 | INFO | Guess submitted | guess=48 | secret=48 | outcome=Win | attempt=2
+2026-05-03 19:06:24,771 | INFO | Game WON | attempts=2 | score=65
+2026-05-03 19:06:51,001 | INFO | Game reset | difficulty=Normal | new secret=67
+2026-05-03 19:06:54,863 | INFO | Invalid guess | raw='1111' | error=Please enter a number between 1 and 100.
+2026-05-03 19:06:58,248 | INFO | Invalid guess | raw='-1' | error=Please enter a number between 1 and 100.
+2026-05-03 19:07:43,253 | INFO | Game reset | difficulty=Normal | new secret=15
+2026-05-03 19:07:46,850 | INFO | Game reset | difficulty=Normal | new secret=49
+2026-05-03 19:07:48,430 | INFO | Guess submitted | guess=15 | secret=49 | outcome=Too Low | attempt=1
+2026-05-03 19:07:50,912 | INFO | Guess submitted | guess=90 | secret=49 | outcome=Too High | attempt=2
+2026-05-03 19:07:55,195 | INFO | Guess submitted | guess=22 | secret=49 | outcome=Too Low | attempt=3
+2026-05-03 19:07:57,395 | INFO | AI tip requested | history=[15, 90, 22] | confidence=-0.54
+2026-05-03 19:09:03,644 | INFO | Game reset | difficulty=Normal | new secret=45
+2026-05-03 19:09:12,570 | INFO | Guess submitted | guess=50 | secret=45 | outcome=Too High | attempt=1
+2026-05-03 19:09:18,350 | INFO | Guess submitted | guess=75 | secret=45 | outcome=Too High | attempt=2
+2026-05-03 19:09:26,966 | INFO | Guess submitted | guess=62 | secret=45 | outcome=Too High | attempt=3
+2026-05-03 19:09:29,933 | INFO | AI tip requested | history=[50, 75, 62] | confidence=-0.31
+2026-05-03 19:12:02,286 | INFO | Game reset | difficulty=Normal | new secret=23
+2026-05-03 19:12:06,524 | INFO | Guess submitted | guess=15 | secret=23 | outcome=Too Low | attempt=1
+2026-05-03 19:12:13,740 | INFO | Guess submitted | guess=90 | secret=23 | outcome=Too High | attempt=2
+2026-05-03 19:12:18,371 | INFO | AI tip requested | history=[15, 90] | confidence=-0.66
+2026-05-03 19:12:44,662 | INFO | Game reset | difficulty=Normal | new secret=71
+2026-05-03 19:12:53,876 | INFO | Guess submitted | guess=50 | secret=71 | outcome=Too Low | attempt=1
+2026-05-03 19:13:00,192 | INFO | Guess submitted | guess=75 | secret=71 | outcome=Too High | attempt=2
+2026-05-03 19:13:03,357 | INFO | Guess submitted | guess=62 | secret=71 | outcome=Too Low | attempt=3
+2026-05-03 19:13:04,403 | INFO | AI tip requested | history=[50, 75, 62] | confidence=-0.31
